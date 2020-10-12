@@ -27,6 +27,7 @@ CREATE TABLE Employees (
   employee_id int AUTO_INCREMENT NOT NULL,
   first_name varchar(30) NOT NULL,
   last_name varchar(30) NOT NULL,
+  manager_id int NULL,
   Role_id int,
   PRIMARY KEY(employee_id),
   FOREIGN KEY(role_id) REFERENCES Roles(role_id)
