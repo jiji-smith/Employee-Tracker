@@ -41,7 +41,8 @@ VALUES
 ("Procurement"),
 ("Logistics"),
 ("Engineering"),
-("Security")
+("Security"),
+("Food")
 ;
 
 INSERT INTO Roles (title, salary, Dept_id)
@@ -51,6 +52,7 @@ VALUES
 ("Dispatcher", 55000, 3),
 ("Staff Engineer", 150000, 4),
 ("Director", 78000, 5);
+("Chef", 65000, 6);
 
 INSERT INTO Employees (first_name, last_name, role_id, manager_id)
 VALUES
@@ -59,3 +61,4 @@ VALUES
 ("Dragon", "C", 3, null),
 ("Ellie", "D", 4, null),
 ("Fink", "S", 5, null);
+("Sola", "J", 6, null);
