@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const cTable = require('console.table');
+const cTable = console.table;
 
 
 const connection = mysql.createConnection({
@@ -10,7 +10,6 @@ const connection = mysql.createConnection({
     password: "",
     database: "employee_tracker_db.sql"
 });
-
 
 
 connection.connect((err) => {
