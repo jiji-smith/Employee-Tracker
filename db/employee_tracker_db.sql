@@ -28,7 +28,7 @@ CREATE TABLE Employees (
   first_name varchar(30) NOT NULL,
   last_name varchar(30) NOT NULL,
   manager_id int NULL,
-  Role_id int,
+  role_id int,
   PRIMARY KEY(employee_id),
   FOREIGN KEY(role_id) REFERENCES Roles(role_id)
   );
@@ -51,7 +51,7 @@ VALUES
 ("Purchasing specialist", 60000, 2),
 ("Dispatcher", 55000, 3),
 ("Staff Engineer", 150000, 4),
-("Director", 78000, 5);
+("Director", 78000, 5),
 ("Chef", 65000, 6);
 
 INSERT INTO Employees (first_name, last_name, role_id, manager_id)
@@ -60,5 +60,5 @@ VALUES
 ("Alex", "B", 2, null),
 ("Dragon", "C", 3, null),
 ("Ellie", "D", 4, null),
-("Fink", "S", 5, null);
+("Fink", "S", 5, null),
 ("Sola", "J", 6, null);

@@ -7,8 +7,8 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
-    database: "employee_tracker_db.sql"
+    password: "password",
+    database: "employee_tracker_db"
 });
 
 
@@ -28,6 +28,7 @@ function runSearch() {
             message: "What would you like to do?",
             choices: [
                 "View Dept",
+                "View Employees",
                 "Add a Dept",
                 "Delete a Dept",
                 "Exit"
@@ -38,6 +39,10 @@ function runSearch() {
                 case "View Dept":
                     console.log("Running get all Departments");
                     deptSearch();
+                    break;
+                case "View Employees":
+                    console.log("Running get all Employees");
+                    employeeSearch();
                     break;
                 case "Add a Dept":
                     console.log("Adding a Departments");
@@ -58,7 +63,16 @@ function runSearch() {
 
 
 function deptSearch() {
-    connection.query("SELECT employee.first_name, employee.last_name, department.name AS Department FROM employee JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY employee.id;",
+    connection.query("SELECT * FROM Depts",
+        function (err, res) {
+            if (err) throw err
+            console.table(res)
+            runSearch()
+        })
+};
+
+function employeeSearch() {
+    connection.query("SELECT Employees.first_name, Employees.last_name, Depts.name AS Department FROM Employees JOIN Roles ON Employees.role_id = Roles.role_id JOIN Depts ON Roles.dept_id = Depts.dept_id ORDER BY Employees.employee_id",
         function (err, res) {
             if (err) throw err
             console.table(res)
@@ -77,7 +91,7 @@ function addDept() {
         }
     ]).then(function (res) {
         var query = connection.query(
-            "INSERT INTO department SET ? ",
+            "INSERT INTO Depts SET ? ",
             {
                 name: res.name
             },
@@ -90,9 +104,32 @@ function addDept() {
     })
 }
 
+function deleteDept() {
+
+    inquirer.prompt([
+        {
+            name: "name",
+            type: "input",
+            message: "What Department id would you like to delete?"
+        }
+    ]).then(function (res) {
+        var query = connection.query(
+            "DELETE FROM Depts WHERE dept_id=?",
+
+                [res.name],
+
+            function (err) {
+                if (err) throw err
+                console.table(res);
+                runSearch();
+            }
+        )
+    })
+}
 
 
 
+//"Delete a Dept" : 1 . asuumption : user knows all the id >>> 2. how can I not use ID
 
 
 
