@@ -1,7 +1,7 @@
 # Employee-Tracker
 
 
-![Language](https://img.shields.io/github/languages/top/jiji-smith/)
+![Language](https://img.shields.io/github/languages/top/jiji-smith/Employee-Tracker/app.js)
 ## Title
 Employee Tracker
 ## Description
