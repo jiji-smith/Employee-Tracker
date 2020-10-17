@@ -1,7 +1,7 @@
 # Employee-Tracker
 
 
-![Language](https://img.shields.io/github/languages/top/jiji-smith/employee_tracker)
+![Language](https://img.shields.io/github/languages/top/jiji-smith/Employee-Tracker/app.js)
 ## Title
 Employee Tracker
 ## Description
@@ -18,7 +18,7 @@ You can track employee information here
 * [Questions](#questions)
 
 ## Installation
-Please check https://github.com/jiji-smith/employee_tracker
+Please check https://github.com/jiji-smith/Employee-Tracker
 ## Usage
 Check the code, install npm, answer the questions!
 ## License
