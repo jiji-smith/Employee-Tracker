@@ -135,7 +135,7 @@ function deleteDept() {
 
 
 
-//-----------This is the code from 1:1 class : something is wrong-------------//
+//-----------I waana try with this code later-------------//
 // const mysql = require("mysql");
 // const inquirer = require("inquirer");
 // const connection = require("./db/connection.js");
