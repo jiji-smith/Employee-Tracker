@@ -114,11 +114,9 @@ function deleteDept() {
         }
     ]).then(function (res) {
         var query = connection.query(
-            "DELETE FROM Depts WHERE dept_id=?",
-
-                [res.name],
-
-            function (err) {
+            "DELETE FROM Depts WHERE dept_id=?", [{
+                dept_id: res.answer
+            }], function (err) {
                 if (err) throw err
                 console.table(res);
                 runSearch();
