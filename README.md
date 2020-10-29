@@ -26,7 +26,7 @@ MIT License
 ## Contributing
 Jiiiii
 ## Video
-[Video Walkthrough](https://youtu.be/t04bJVhZMJg)
+[Video Walkthrough: https://youtu.be/t04bJVhZMJg](https://youtu.be/t04bJVhZMJg)
 ## Tests
 
 ## Questions
